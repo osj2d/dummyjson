@@ -1,6 +1,6 @@
 import React from "react";
 
-const UseForm = (type) => {
+const UseForm = () => {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(null);
 

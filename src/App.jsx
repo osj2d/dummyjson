@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
-import { UserStorage } from "./UserContext";
+import { UserContext, UserStorage } from "./UserContext";
+import Conta from "./Components/Conta/Conta";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <UserStorage>
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="conta" element={<Conta />}></Route>
           </Routes>
         </UserStorage>
       </BrowserRouter>

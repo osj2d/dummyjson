@@ -10,15 +10,16 @@ export const UserStorage = ({ children }) => {
   const { data, error, loading, request } = useFetch();
   const navigate = useNavigate();
 
+
   React.useEffect(() => {
     async function autoLogin() {
       const token = window.localStorage.getItem("token");
-      //Validar totem valido
-      navigate("/conta");
+      if (token) {
+        navigate("/conta");
+      }
     }
     autoLogin();
-  }, []);
-
+  }, [navigate]);
   async function getUser(token) {
     const { url, options } = Get_User(token);
     const response = await fetch(url, options);
@@ -39,13 +40,3 @@ export const UserStorage = ({ children }) => {
     </UserContext.Provider>
   );
 };
-
-// const { data, error, loading, request } = useFetch();
-
-// const getUser = React.useCallback(
-//   async function () {
-//     const { url, options } = Get_User(token);
-//     await request(url, options);
-//   },
-//   [request, token]
-// );

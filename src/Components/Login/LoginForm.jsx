@@ -1,14 +1,14 @@
 import React from "react";
 import UseForm from "../../Hooks/UseForm";
 import { UserContext } from "../../UserContext";
-import { useNavigate, Navigate } from "react-router-dom";
 import Input from "../Form/input";
 import Button from "../Form/Button";
+import styles from "./LoginForm.module.css";
 
 const LoginForm = () => {
   const username = UseForm();
   const password = UseForm();
-  const { userLogin, error } = React.useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -18,10 +18,11 @@ const LoginForm = () => {
     }
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.container} onSubmit={handleSubmit}>
       <Input label="username" type="text" name="username" {...username} />
       <Input label="password" type="password" name="password" {...password} />
-      <Button>Entrar</Button>
+      {loading ? <Button disabled>Loading</Button> : <Button>Entrar</Button>}
+
       {error && <p>Deu errado: {error}</p>}
     </form>
   );

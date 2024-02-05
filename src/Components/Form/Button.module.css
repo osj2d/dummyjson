@@ -1,0 +1,16 @@
+.btn {
+  font-size: 18px;
+  background: #f9ed32;
+  border: none;
+  padding: 10px 50px;
+  border-radius: 5px;
+  align-self: center;
+}
+.btn:hover {
+  cursor: pointer;
+  background: #f2d335;
+}
+.btn:disabled {
+  background: white;
+  cursor: none;
+}

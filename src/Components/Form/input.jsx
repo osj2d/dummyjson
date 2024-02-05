@@ -1,10 +1,14 @@
 import React from "react";
+import styles from "./input.module.css";
 
 const input = ({ label, name, value, onChange, error, onBlur }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
+    <div className={styles.container}>
+      <label className={styles.label} htmlFor={name}>
+        {label}
+      </label>
       <input
+        className={styles.input}
         id={name}
         name={name}
         value={value}

@@ -1,0 +1,15 @@
+.container {
+  max-width: 400px;
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  /* align-items: center; */
+  border: 2px solid #7c838a;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.btn {
+  align-self: center;
+}

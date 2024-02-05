@@ -8,7 +8,6 @@ const Conta = () => {
   React.useEffect(() => {
     const getToken = localStorage.getItem("token");
     setToken(getToken);
-    console.log(token);
     if (token === null) {
       navigate("/");
     } else {
